@@ -1,0 +1,38 @@
+.divider {
+    --gold: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: min(400px, 80%);
+    margin: 32px auto;
+}
+
+/* a double rule that fades out towards the edges */
+.divider-line {
+    flex: 1;
+    height: 5px;
+    border-block: 1px solid var(--gold);
+    mask-image: linear-gradient(to right, transparent, #000);
+}
+
+.divider-line:last-child {
+    mask-image: linear-gradient(to left, transparent, #000);
+}
+
+/* a diamond with a solid diamond inside it */
+.divider-gem {
+    position: relative;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--gold);
+    rotate: 45deg;
+}
+
+.divider-gem::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--gold);
+}

@@ -1,0 +1,37 @@
+.entry {
+    /* --progress (0 to 1) is set on this element by entry.jsx */
+    background-color: #000000ee;
+    width: min(1000px, 90%);
+    margin-inline: auto;
+}
+
+.entry-title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: #000000ff;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d4af37;
+}
+
+.entry-title h2 {
+    margin: 0;
+}
+
+/* pinned to the right edge so the title stays centred */
+.entry-title .indicator {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.entry-text {
+    text-align: left;
+    padding: 16px 24px;
+}

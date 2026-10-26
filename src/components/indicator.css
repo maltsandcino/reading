@@ -1,0 +1,12 @@
+.indicator {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background-color: green;
+    opacity: calc(0.4 + var(--progress, 0) * 0.6);
+    filter: brightness(calc(1 + var(--progress, 0) * 0.8));
+    box-shadow:
+        0 0 calc(var(--progress, 0) * 12px) calc(var(--progress, 0) * 2px) limegreen,
+        0 0 calc(var(--progress, 0) * 30px) calc(var(--progress, 0) * 6px) limegreen;
+}
