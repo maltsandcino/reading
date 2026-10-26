@@ -1,8 +1,7 @@
 .entry {
     /* --progress (0 to 1) is set on this element by entry.jsx */
     background-color: #000000ee;
-    width: min(1000px, 90%);
-    margin-inline: auto;
+    margin-inline: 16px;
 }
 
 .entry-title {

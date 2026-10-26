@@ -2,9 +2,10 @@
 .menu {
     position: fixed;
     top: 0;
-    left: 12px;
+    left: 5px; /* the width of the scroll bar */
     z-index: 2;
-    width: 36px;
+    width: auto;
+    padding-inline: 4px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,6 +22,7 @@
     text-shadow: 0 0 6px #000;
     transition: color 0.2s, text-shadow 0.2s;
     padding: 4px;
+    min-width: 15px;
     border-radius: 15px;
     background-color: #000000aa;
 }
