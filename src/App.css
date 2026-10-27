@@ -5,3 +5,9 @@
   margin-bottom: 30px;
   background-color: #000000ee;
 }
+
+iframe {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+}
