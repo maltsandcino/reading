@@ -11,3 +11,26 @@ iframe {
   margin-inline: auto;
   max-width: 100%;
 }
+
+.entry-center{
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+figure {
+  display: block;
+  width: fit-content;   /* shrink to the image so the caption lines up with its left edge */
+  max-width: 100%;
+  margin: 1em auto;     /* clears the browser's default 40px side margins */
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+}
+
+figcaption {
+  text-align: left;     /* #root is text-align: center, so override it */
+  line-height: 1.2;     /* roughly single-spaced */
+}
