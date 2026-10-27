@@ -33,4 +33,6 @@
 .entry-text {
     text-align: left;
     padding: 16px 24px;
+    /* long URLs have no spaces to break at, and would widen the whole page on a phone */
+    overflow-wrap: anywhere;
 }
