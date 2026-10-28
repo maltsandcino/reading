@@ -1,7 +1,11 @@
 .entry {
     /* --progress (0 to 1) is set on this element by entry.jsx */
-    background-color: #000000ee;
-    margin-inline: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--measure);
+    margin-inline: auto;
+    background-color: var(--panel);
+    border: 1px solid var(--gold-faint);
 }
 
 .entry-title {
@@ -11,28 +15,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background-color: #000000ff;
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid #d4af37;
+    padding: 14px 48px; /* side room keeps long titles clear of the indicator dot */
+    background-color: #000;
+    border-bottom: 1px solid var(--gold);
 }
 
 .entry-title h2 {
     margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
 /* pinned to the right edge so the title stays centred */
 .entry-title .indicator {
     position: absolute;
-    right: 16px;
+    right: 18px;
     top: 50%;
     translate: 0 -50%;
 }
 
 .entry-text {
     text-align: left;
-    padding: 16px 24px;
+    padding: 32px clamp(20px, 5vw, 56px) 44px;
+    color: var(--ink);
+    line-height: 1.75;
     /* long URLs have no spaces to break at, and would widen the whole page on a phone */
     overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .entry {
+        max-width: none;
+        border-inline: 0;
+    }
+
+    .entry-title {
+        top: var(--topbar-height); /* pins just below the top menu bar */
+        padding: 12px 36px;
+    }
+
+    .entry-title h2 {
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+    }
+
+    .entry-title .indicator {
+        right: 14px;
+    }
+
+    .entry-text {
+        padding: 24px 18px 36px;
+    }
 }

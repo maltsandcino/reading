@@ -21,7 +21,7 @@ export default function Scrollbar() {
         <div className="side-scroll">
             <div
                 className="side-scroll-fill"
-                style={{ transform: `scaleY(${progress})` }}
+                style={{ '--scroll': progress }}
             />
         </div>
     )

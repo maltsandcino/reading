@@ -1,18 +1,57 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(48px, 10vh, 96px) 16px 8px;
+}
+
+/* soft shadow behind the title so the background art doesn't cut through the letters */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 60% 70% at 50% 55%, rgba(0, 0, 0, 0.75), transparent 75%);
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  padding-left: 0.12em; /* balances the letter-spacing trailing the last letter */
+  font-size: clamp(34px, 8vw, 84px);
+  line-height: 1.05;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 28px #000;
+}
+
+.hero h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(12px, 2.4vw, 16px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 .intro {
-  width: 90%;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-color: #000000ee;
+  max-width: 600px;
+  margin: 8px auto;
+  padding: 20px 28px;
+  background-color: var(--panel);
+  border: 1px solid var(--gold-faint);
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .intro {
+    margin-inline: 12px;
+    padding: 16px 20px;
+  }
 }
 
 iframe {
-  display: block;
-  margin-inline: auto;
-  max-width: 100%;
-}
-
-.entry-center{
   display: block;
   margin-inline: auto;
   max-width: 100%;
@@ -22,15 +61,22 @@ figure {
   display: block;
   width: fit-content;   /* shrink to the image so the caption lines up with its left edge */
   max-width: 100%;
-  margin: 1em auto;     /* clears the browser's default 40px side margins */
+  margin: 0.75em auto;  /* clears the browser's default 40px side margins */
 }
 
-figure img {
+figure img,
+figure iframe {
   display: block;
   max-width: 100%;
+  box-shadow: 0 0 0 1px var(--gold-faint); /* hairline frame, doesn't change the size */
 }
 
 figcaption {
   text-align: left;     /* #root is text-align: center, so override it */
-  line-height: 1.2;     /* roughly single-spaced */
+  margin-top: 8px;      /* gap between the image/video and its caption */
+  font-size: 0.85em;
+  line-height: 1.3;     /* still single-spaced, a touch looser for the smaller size */
+  letter-spacing: 0.1px;
+  color: var(--ink-soft);
+  text-wrap: pretty;    /* avoids a single word stranded on the last line */
 }

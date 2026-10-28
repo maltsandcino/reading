@@ -1,60 +1,62 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* the page is always dark (black panels over the celestial art), so there is no light variant */
+  --gold: #d4af37;
+  --gold-faint: rgba(212, 175, 55, 0.22);
+  --ink: #e8e3d3;      /* body text */
+  --ink-soft: #a9a494; /* captions and secondary text */
+  --ink-h: #f6f1e1;    /* headings */
+  --panel: rgba(6, 6, 10, 0.92);
 
   --sans: 'Josefin Sans', system-ui, sans-serif;
   --heading: 'Poiret One', system-ui, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-  --sidebar-width: 48px; /* room for the scroll bar and the number menu */
+  --sidebar-width: 56px; /* room for the number menu */
+  --measure: 760px;      /* widest the reading column gets */
+  --topbar-height: 0px;  /* only phones have a bar across the top */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  font: 18px/1.7 var(--sans);
+  letter-spacing: 0.2px;
+  color-scheme: dark;
+  color: var(--ink);
+  background: #000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 17px;
+  }
+
+  @media (max-width: 700px) {
+    --sidebar-width: 0px;  /* the numbers move to a bar across the top */
+    --topbar-height: 46px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* hide the browser's own scroll bar; the gold bar shows scroll progress */
+html {
+  scrollbar-width: none; /* Firefox, Chrome 121+ */
+  scroll-padding-top: var(--topbar-height); /* jumping to an entry stops below the top bar */
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html::-webkit-scrollbar {
+  display: none; /* older Chrome, Safari */
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 body {
@@ -80,39 +82,40 @@ body {
 #root {
   margin-left: var(--sidebar-width);
   text-align: center;
-  border-right: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding-right: 45px;
+  padding: var(--topbar-height) clamp(10px, 3vw, 40px) 72px;
+}
+
+/* on a phone the entries run the full width of the screen */
+@media (max-width: 700px) {
+  #root {
+    padding-inline: 0;
+  }
 }
 
 h1,
 h2 {
   font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-weight: 400;
+  color: var(--ink-h);
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+  margin: 24px 0;
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
 }
+
 p {
   margin: 0;
 }

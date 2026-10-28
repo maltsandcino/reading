@@ -1,6 +1,7 @@
 // placeholder body, long enough to test the sticky title and progress indicator
 const filler = Array.from({ length: 20 }, (_, i) => <h1 key={i}>entry text</h1>)
 import Flapper from './flapper.avif'
+import Figure from '../components/figure.jsx'
 
 const entries = [
     { id: 'entry-1', title: 'Why Choose The Great Gatsby?', content: 
@@ -13,24 +14,30 @@ const entries = [
         as the cousin of Gatsby's love interest, the married Daisy Buchanan. The main themes, besides naturally the themes of love an desire, were very topical to the time-period, the roaring twenties. The book depicts decadence, social class struggle, obsession and illusion, and the 'American Dream'. The book also protrays some character
         types which were relatively new at the time, and no doubt were inspired by the flappers of the 1920s. The flapper archetype is present in this and other of Fitzgerald's works.</p>
     <br></br>
-    <figure>
-    <img src={Flapper} alt="[describe the image]" />
-    <figcaption>
-        Fig. 1. [Description of the image]. <i>[Website or Publication]</i>, [Publisher], [Day Mon. Year], www.history.com/articles/flappers.
-    </figcaption>
-    </figure>
+    <Figure
+        media={Flapper}
+        number={1}
+        description="A typical depiction of a flapper"
+        sitename="History"
+        publisher="A&E Television Networks"
+        day="6" month="Mar." year="2018"
+        link="www.history.com/articles/flappers"
+    />
     <br></br>
     <p>The social and historical perspective of the book intrigued me, and while all the choices for this exercise have their merits, I was interested in learning more about the 1920s, and hoping to make comparisons to society today. The 1920s was a time of rapidly shifting norms. What we might consider to be normal, modern aspects of our everyday
         today started to become norms in this period. Things such as the wide-spread adoption of automobiles, women's role in the workplace, and new genres of music all saw their genesis in this era. Technology was rapidly progressing, and I see a lot of parallels between politics and society in that time and what is happening politically and economically 
         today in North America. Right now, certain companies are reaching evaluations in the trillions of dollars, owing to new technologies (such as generative AI), and I am interested to draw more parallels as I learn more about life in the 1920s.
     </p>
     <br></br>
-    <figure>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VfOR1XCMf7A?si=Pqfi9cMwLjSRSeqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <figcaption>
-        Fig. 2. [Description of the image]. <i>[Website or Publication]</i>, [Publisher], [Day Mon. Year], www.history.com/articles/flappers.
-    </figcaption>
-    </figure>
+    <Figure
+        media="https://www.youtube.com/embed/VfOR1XCMf7A?si=Pqfi9cMwLjSRSeqT"
+        number={2}
+        description="The Roaring 20's: Crash Course US History #32"
+        sitename="YouTube"
+        publisher="CrashCourse"
+        day="4" month="Oct." year="2013"
+        link="www.youtube.com/watch?v=VfOR1XCMf7A"
+    />
     <br></br>
     <p>Another factor in my choice was the actual writing style of <i>The Great Gatsby</i>. I have not read anything else by Fitzgerald, however I do know from my initial research that he was a contemporary and friend of Hemingway, whose relatively terse prose I do
         enjoy. From the excerpt I read as part of choosing a subject, I did find that it was more verbose than Hemingway, and reminded me of my own writing to a degree. Fitzgerald himself attended Princeton until 1917, but did not graduate. He enlisted in the army before his expected grauation date,
