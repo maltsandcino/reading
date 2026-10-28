@@ -31,11 +31,19 @@
     transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
-.menu a:hover,
 .menu a:focus-visible {
     color: #fff4c2;
     border-color: var(--gold);
     background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* touch screens keep :hover on whatever was last tapped, so only use it where a pointer can really hover */
+@media (hover: hover) {
+    .menu a:hover {
+        color: #fff4c2;
+        border-color: var(--gold);
+        background-color: rgba(0, 0, 0, 0.85);
+    }
 }
 
 /* the entry currently on screen, set by menu.jsx */
