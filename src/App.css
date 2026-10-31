@@ -57,26 +57,40 @@ iframe {
   max-width: 100%;
 }
 
+/* the box itself (border, fill, corner brackets) comes from .framed in index.css */
 figure {
-  display: block;
-  width: fit-content;   /* shrink to the image so the caption lines up with its left edge */
+  display: grid;
+  width: fit-content;   /* shrink to the image or video so the box hugs it */
   max-width: 100%;
-  margin: 0.75em auto;  /* clears the browser's default 40px side margins */
+  box-sizing: border-box;
+  margin: 1em auto;     /* also clears the browser's default 40px side margins */
+  padding: 10px;
 }
 
 figure img,
 figure iframe {
   display: block;
   max-width: 100%;
-  box-shadow: 0 0 0 1px var(--gold-faint); /* hairline frame, doesn't change the size */
+}
+
+figure iframe {
+  height: auto;         /* the height attribute is a fixed 315px, which squashes the video on a phone */
+  aspect-ratio: 16 / 9;
 }
 
 figcaption {
+  contain: inline-size; /* the caption's length doesn't size the box, so it wraps at the width of the image */
   text-align: left;     /* #root is text-align: center, so override it */
-  margin-top: 8px;      /* gap between the image/video and its caption */
+  margin-top: 10px;     /* gap between the image/video and its caption */
   font-size: 0.85em;
   line-height: 1.3;     /* still single-spaced, a touch looser for the smaller size */
   letter-spacing: 0.1px;
   color: var(--ink-soft);
   text-wrap: pretty;    /* avoids a single word stranded on the last line */
+}
+
+@media (max-width: 700px) {
+  figure {
+    padding: 8px;
+  }
 }

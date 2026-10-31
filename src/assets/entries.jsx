@@ -2,6 +2,15 @@
 const filler = Array.from({ length: 20 }, (_, i) => <h1 key={i}>entry text</h1>)
 import Flapper from './flapper.avif'
 import Figure from '../components/figure.jsx'
+import SmartGoals from '../components/smart.jsx'
+
+const smartGoals = [
+    { letter: 'S', term: 'Specific', text: 'My ultimate goal is specifically to read the novel in a reasonable time period.' },
+    { letter: 'M', term: 'Measurable', text: 'I should read a set number of pages, so that I know whether my goal was achieved or not.' },
+    { letter: 'A', term: 'Attainable', text: "By setting a reasonable and attainable goal (or, sub-goal), I won't quickly burn-out or lose interest." },
+    { letter: 'R', term: 'Relevant', text: 'Obviously this has to be relevant to reading the novel (and understanding it)' },
+    { letter: 'T', term: 'Time-bound', text: 'I want to accomplish this in a reasonable amount of time, while continuing with the rest of my coursework in English.' },
+]
 
 const entries = [
     { id: 'entry-1', title: 'Why Choose The Great Gatsby?', content: 
@@ -50,7 +59,30 @@ const entries = [
         All that being said, I am excited to begin reading the book not only for the story itself, but also for the chance to look into a mirror reflecting from a century in the past. I look forward to the chance to reflect on where we are, from whence we came, and whither we are going.
     </p>
     </> },
-    { id: 'entry-2', title: 'another title', content: <>{filler}</> },
+    { id: 'entry-2', title: 'Reading Schedule', content: <>
+    <p>Making a schedule and sticking to it can be tough sometimes. Whether life gets in the way, interest wanes, or you simply feel burnt out, sometimes you lose motivation and find yourself either spinning your wheels, starting over from page one, or simply not caring
+    about your task enough to complete it. I've noticed that this can happen in any facet of life; often times it's easy to start strong but to lose steam very quickly, especially when it comes to starting something new. This can happen with an exercise routine just as it can 
+    happen with your work.</p>
+    <br></br>
+    <p>I have some experience with goal-setting and task decomposition from my own work-life. As an example, generally when a new task or project is assigned, I am required to break this down into sub-tasks, assigning a time estimate for each sub-task. I log my time as I work on a sub-task, and I monitor
+    the progress by keeping my 'ticket' (some representation of the task with an explanation, requirements, and other traits) updated with the correct status. This approach works for me, although it's not a perfect fit for reading <i>The Great Gatsby</i>, because that system is also designed for the rest 
+    of my team to keep track of each other's work.</p>
+    <br></br>
+    <p>That said, the idea of decomposing the book into sub-tasks (such as, note consolidation and reading) is worth some consideration. Next to that, I think it's important to integrate the concept of SMART goals into my potential reading schedule. Although I am sure you, reading my journal, are already aware of
+    what these are, I'm going to expand a little on what that acronym means:</p>
+
+    <SmartGoals items={smartGoals} />
+
+    <p>I think that setting reasonable, small goals is the correct approach for reading this novel. This gives me time to reflect on what I have read, as well. I will not feel rushed and I will not be inclined to gloss over what seem like less-important details from the novel.</p>
+    <br></br>
+    <p>I have specifically chosen this as my reading schedule:</p>
+    <br></br>
+    <p><i>Each day, I shall read 10 pages (or more, if I happen to end at a point where it would be very distracting to stop immediately) from the novel and give myself time to reflect.</i></p>
+    <br></br>
+    <p>The version of the novel I have ends on page 189. This means it will take me only 19 days to read, or less than three weeks. I chose 10 pages because it's a very digestible number of pages, and won't cause me to be overwhelmed. It is not a lot of reading, and will allow me to fit it into my regular schedule
+    without adding extra stress and inciting worry that, by the end of the day, I have to read an entire chapter (or more). Because I am just starting the course, I should be well on target to finish the novel before the end of the course. Additionally, doing this simultaneously with learning new things in the rest of
+    the course will give me a chance to develop my literary criticism skills before finishing my reading journal. For these reasons, I feel as though it is a SMART goal, and I am already on track with my reading schedule.</p>
+    </> },
     { id: 'entry-3', title: 'another title', content: <>{filler}</> },
     { id: 'entry-4', title: 'another title', content: <>{filler}</> },
     { id: 'entry-5', title: 'another title', content: <>{filler}</> },

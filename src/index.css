@@ -2,6 +2,7 @@
   /* the page is always dark (black panels over the celestial art), so there is no light variant */
   --gold: #d4af37;
   --gold-faint: rgba(212, 175, 55, 0.22);
+  --gold-soft: rgba(212, 175, 55, 0.5);
   --ink: #e8e3d3;      /* body text */
   --ink-soft: #a9a494; /* captions and secondary text */
   --ink-h: #f6f1e1;    /* headings */
@@ -118,4 +119,33 @@ h2 {
 
 p {
   margin: 0;
+}
+
+/* the box around figures and the SMART panel: a hairline frame with a bracket on two opposite corners */
+.framed {
+  position: relative;
+  background-color: #000;
+  border: 1px solid var(--gold-soft);
+}
+
+.framed::before,
+.framed::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid var(--gold);
+  pointer-events: none;
+}
+
+.framed::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.framed::after {
+  right: -1px;
+  bottom: -1px;
+  border-width: 0 2px 2px 0;
 }

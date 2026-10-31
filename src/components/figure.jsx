@@ -2,7 +2,7 @@ export default function Figure({ media, number, description, sitename, publisher
     const isVideo = media.includes('youtu')
 
     return (
-        <figure>
+        <figure className="framed">
             {isVideo ? (
                 <iframe
                     width="560"
